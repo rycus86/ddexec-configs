@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+notify-send:
+  image: notify-send
+  ipc: host
+  dockerfile: |
+    FROM alpine
+    RUN apk add libnotify
+    ENTRYPOINT [ "/usr/bin/notify-send" ]

@@ -1,0 +1,7 @@
+#!/usr/local/bin/ddexec
+stterm:
+  image: stterm
+  dockerfile: |
+    FROM alpine
+    RUN apk add st ttf-freefont
+    ENTRYPOINT [ "/usr/bin/st" ]

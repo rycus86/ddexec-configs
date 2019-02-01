@@ -1,0 +1,10 @@
+#!/usr/local/bin/ddexec
+vim:
+  image: vim
+  working_dir: ${PWD}
+  stdin_open: true
+  tty: true
+  dockerfile: |
+    FROM alpine
+    RUN apk add vim
+    ENTRYPOINT [ "/usr/bin/vim" ]

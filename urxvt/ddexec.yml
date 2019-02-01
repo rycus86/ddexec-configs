@@ -1,0 +1,7 @@
+#!/usr/local/bin/ddexec
+urxvt:
+  image: urxvt
+  dockerfile: |
+    FROM alpine
+    RUN apk add rxvt-unicode
+    ENTRYPOINT [ "/usr/bin/urxvt" ]

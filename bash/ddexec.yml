@@ -1,0 +1,9 @@
+#!/usr/local/bin/ddexec
+bash:
+  image: bash
+  stdin_open: true
+  tty: true
+  dockerfile: |
+    FROM alpine
+    RUN apk add bash
+    ENTRYPOINT [ "/bin/bash" ]

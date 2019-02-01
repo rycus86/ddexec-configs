@@ -1,0 +1,12 @@
+#!/usr/bin/env ddexec
+i3status:
+  image: i3status
+  network_mode: host
+  devices:
+    - /dev/snd
+  cap_add:
+    - NET_ADMIN
+  dockerfile: |
+    FROM debian
+    RUN apt-get update && apt-get install -y i3status
+    ENTRYPOINT ["/usr/bin/i3status"]

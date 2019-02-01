@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+curl:
+  image: curl
+  dockerfile: |
+    FROM alpine
+    RUN apk add curl
+    ENTRYPOINT [ "/usr/bin/curl" ]
+    CMD [ "-h" ]
