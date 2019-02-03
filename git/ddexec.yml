@@ -1,7 +1,9 @@
-#!/usr/local/bin/ddexec
+#!/usr/local/bin/ddexec --
 git:
   image: git
   working_dir: ${PWD}
+  stdin_open: true
+  tty: true
   dockerfile: |
     FROM alpine
     RUN apk add --no-cache git

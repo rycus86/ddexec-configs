@@ -47,6 +47,7 @@ for APP_CONFIG in */ddexec.yml; do
         echo "exec ddexec \\"
         [ -n "${USE_HOST}" ] && echo "  --host \\"
         echo "  $(cd "$APP" && pwd)/ddexec.yml \\"
+        echo "  -- \\"
         echo '  "$@"'
     } > "${TARGET_DIR}/${APP}"
 
