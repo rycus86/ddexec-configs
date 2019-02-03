@@ -4,6 +4,6 @@ dunst:
   ipc: host
   dockerfile: |
     FROM alpine
-    RUN apk add dunst ttf-freefont
+    RUN apk add --no-cache dunst ttf-freefont
     ENTRYPOINT [ "/usr/bin/dunst" ]
     CMD [ "-config", "/usr/share/dunst/dunstrc" ]

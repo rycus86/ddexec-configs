@@ -1,0 +1,9 @@
+#!/usr/local/bin/ddexec
+git:
+  image: git
+  working_dir: ${PWD}
+  dockerfile: |
+    FROM alpine
+    RUN apk add --no-cache git
+    ENTRYPOINT [ "/usr/bin/git" ]
+    CMD [ "--help" ]

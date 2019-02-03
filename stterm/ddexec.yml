@@ -3,5 +3,5 @@ stterm:
   image: stterm
   dockerfile: |
     FROM alpine
-    RUN apk add st ttf-freefont
+    RUN apk add --no-cache st ttf-freefont
     ENTRYPOINT [ "/usr/bin/st" ]

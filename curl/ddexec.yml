@@ -3,6 +3,6 @@ curl:
   image: curl
   dockerfile: |
     FROM alpine
-    RUN apk add curl
+    RUN apk add --no-cache curl
     ENTRYPOINT [ "/usr/bin/curl" ]
     CMD [ "-h" ]

@@ -4,5 +4,5 @@ notify-send:
   ipc: host
   dockerfile: |
     FROM alpine
-    RUN apk add libnotify
+    RUN apk add --no-cache libnotify
     ENTRYPOINT [ "/usr/bin/notify-send" ]

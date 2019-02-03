@@ -6,5 +6,5 @@ vim:
   tty: true
   dockerfile: |
     FROM alpine
-    RUN apk add vim
+    RUN apk add --no-cache vim
     ENTRYPOINT [ "/usr/bin/vim" ]
