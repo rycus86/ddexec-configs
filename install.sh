@@ -1,6 +1,7 @@
 #!/bin/sh
 
 USE_HOST=""
+SELECTED=""
 
 if [ -d "${HOME}/bin" ]; then
     TARGET_DIR="${HOME}/bin"
@@ -27,8 +28,12 @@ while [ -n "$1" ]; do
         exit 0
         ;;
     *)
-        "Unexpected argument: $KEY"
-        exit 1
+        if [ -z "${SELECTED}" ]; then
+            SELECTED="${KEY}"
+        else
+            "Unexpected argument: $KEY"
+            exit 1
+        fi
         ;;
     esac
 done
@@ -40,14 +45,18 @@ echo "Installing into ${TARGET_DIR} ..."
 for APP_CONFIG in */ddexec.yml; do
     APP="$(dirname "${APP_CONFIG}")"
 
+    [ -n "${SELECTED}" ] && [ "${SELECTED}" != "${APP}" ] && continue
+
     printf "%s ... " "$APP"
 
     {
         echo "#!/bin/sh"
+        [ -n "${USE_HOST}" ] && {
+            echo "export USE_HOST_X11=1"
+            echo "export USE_HOST_DBUS=1"
+        }
         echo "exec ddexec \\"
-        [ -n "${USE_HOST}" ] && echo "  --host \\"
         echo "  $(cd "$APP" && pwd)/ddexec.yml \\"
-        echo "  -- \\"
         echo '  "$@"'
     } > "${TARGET_DIR}/${APP}"
 
