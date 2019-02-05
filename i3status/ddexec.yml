@@ -2,8 +2,6 @@
 i3status:
   image: i3status
   network_mode: host
-  devices:
-    - /dev/snd
   cap_add:
     - NET_ADMIN
   dockerfile: |

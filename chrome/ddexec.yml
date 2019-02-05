@@ -9,12 +9,6 @@ chrome:
     - type: bind
       source: ${HOME}/Downloads
       target: ${HOME}/Downloads
-  devices:
-    - /dev/snd
-    - /dev/dri
-    - /dev/video0
-  group_add:
-    - video
   security_opt:
     - seccomp=${SOURCE}/../chrome-seccomp.json
 
