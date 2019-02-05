@@ -1,4 +1,4 @@
-#!/usr/local/bin/ddexec --
+#!/usr/local/bin/ddexec
 docker:
   image: docker
   command:

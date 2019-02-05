@@ -1,4 +1,4 @@
-#!/usr/local/bin/ddexec --
+#!/usr/local/bin/ddexec
 git:
   image: git
   working_dir: ${PWD}
