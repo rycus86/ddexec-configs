@@ -1,0 +1,19 @@
+#!/usr/local/bin/ddexec
+slack:
+  image: jess/slack
+  ipc: host
+  devices:
+    - /dev/dri
+    - /dev/video0
+  group_add:
+    - video
+  volumes:
+    - type: bind
+      source: ${HOME}/.slack
+      target: ${HOME}/.config/Slack
+  x-startup:
+    share_sound: true
+    share_home: true
+    share_dbus: true
+    share_x11: true
+    share_shm: true
