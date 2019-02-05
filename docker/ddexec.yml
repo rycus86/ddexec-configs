@@ -1,7 +1,7 @@
 #!/usr/local/bin/ddexec
 docker:
   image: docker
-  command:
-    - --help
+  command: >
+    --help
   stdin_open: true
   tty: true
