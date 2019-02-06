@@ -1,7 +1,7 @@
 #!/usr/local/bin/ddexec
 chrome:
   image: jess/chrome
-  mem_limit: 512m
+  mem_limit: ${CHROME_MEM_LIMIT:-512m}
   volumes:
     - type: bind
       source: ${HOME}/.chrome
