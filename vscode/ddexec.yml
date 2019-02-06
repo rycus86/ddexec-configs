@@ -4,12 +4,5 @@ vscode:
   command: /usr/share/code/code
   network_mode: host
   ipc: host
-  devices:
-    - /dev/dri
   environment:
     - GDK_SYNCHRONIZE=1
-  x-startup:
-    share_home: true
-    share_dbus: true
-    share_x11: true
-    share_shm: true
