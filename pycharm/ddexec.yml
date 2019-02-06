@@ -1,0 +1,25 @@
+#!/usr/local/bin/ddexec
+pycharm:
+  # use PYCHARM_VARIANT=pycharm-pro for the pro version
+  # use PYCHARM_VERSION=2018.3.3 for a specific version
+  image: rycus86/${PYCHARM_VARIANT:-pycharm}:${PYCHARM_VERSION:-latest}
+  network_mode: host
+  volumes:
+    - type: bind
+      source: ${HOME}/.PyCharm
+      target: ${HOME}/.PyCharm
+    - type: bind
+      source: ${HOME}/.PyCharm.java
+      target: ${HOME}/.java
+    - type: bind
+      source: ${HOME}/.PyCharm.py2/usr
+      target: /usr/local/lib/python2.7
+    - type: bind
+      source: ${HOME}/.PyCharm.py2/home
+      target: ${HOME}/.local/lib/python2.7
+    - type: bind
+      source: ${HOME}/.PyCharm.py3/usr
+      target: /usr/local/lib/python3.6
+    - type: bind
+      source: ${HOME}/.PyCharm.py3/home
+      target: ${HOME}/.local/lib/python3.6

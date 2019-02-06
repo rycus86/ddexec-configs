@@ -1,0 +1,14 @@
+#!/usr/local/bin/ddexec
+goland:
+  # use GOLAND_VERSION=2018.3.3 for a specific version
+  image: rycus86/goland:${GOLAND_VERSION:-latest}
+  network_mode: host
+  environment:
+    - GO111MODULE=${GO111MODULE:-auto}
+  volumes:
+    - type: bind
+      source: ${HOME}/.GoLand
+      target: ${HOME}/.GoLand
+    - type: bind
+      source: ${HOME}/.GoLand.java
+      target: ${HOME}/.java

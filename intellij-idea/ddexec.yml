@@ -1,0 +1,19 @@
+#!/usr/local/bin/ddexec
+idea:
+  # use INTELLIJ_VARIANT=idea-pro for the pro version
+  # use INTELLIJ_VERSION=2018.3.3 for a specific version
+  image: rycus86/intellij-${INTELLIJ_VARIANT:-idea}:${INTELLIJ_VERSION:-latest}
+  network_mode: host
+  volumes:
+    - type: bind
+      source: ${HOME}/.Idea
+      target: ${HOME}/.Idea
+    - type: bind
+      source: ${HOME}/.Idea.java
+      target: ${HOME}/.java
+    - type: bind
+      source: ${HOME}/.m2
+      target: ${HOME}/.m2
+    - type: bind
+      source: ${HOME}/.gradle
+      target: ${HOME}/.gradle
