@@ -2,6 +2,7 @@
 chrome:
   image: jess/chrome
   mem_limit: ${CHROME_MEM_LIMIT:-512m}
+  mem_swappiness: 0
   volumes:
     - type: bind
       source: ${HOME}/.chrome
