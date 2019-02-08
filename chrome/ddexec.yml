@@ -2,7 +2,8 @@
 chrome:
   image: jess/chrome
   mem_limit: ${CHROME_MEM_LIMIT:-512m}
-  mem_swappiness: 0
+  # default: use 2x memory limit as swap
+  memswap_limit: ${CHROME_MEMSWAP_LIMIT:-0}
   volumes:
     - type: bind
       source: ${HOME}/.chrome

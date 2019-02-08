@@ -12,3 +12,6 @@ goland:
     - type: bind
       source: ${HOME}/.GoLand.java
       target: ${HOME}/.java
+# To run the debugger, you'll need seccomp:unconfined, just uncomment below
+#  security_opt:
+#    - seccomp:unconfined
