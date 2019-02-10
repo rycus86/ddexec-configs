@@ -1,6 +1,6 @@
 #!/usr/local/bin/ddexec
-git:
-  image: git
+ssh:
+  image: ssh
   working_dir: ${PWD}
   stdin_open: true
   tty: true
@@ -10,6 +10,5 @@ git:
       target: ${HOME}/.ssh
   dockerfile: |
     FROM alpine
-    RUN apk add --no-cache git openssh-client
-    ENTRYPOINT [ "/usr/bin/git" ]
-    CMD [ "--help" ]
+    RUN apk add --no-cache openssh-client
+    ENTRYPOINT [ "/usr/bin/ssh" ]
