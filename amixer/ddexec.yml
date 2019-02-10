@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+amixer:
+  image: amixer
+  dockerfile: |
+    FROM alpine
+    RUN apk add alsa-utils
+    ENTRYPOINT [ "/usr/bin/amixer" ]
+

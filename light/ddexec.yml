@@ -1,0 +1,16 @@
+#!/usr/local/bin/ddexec
+light:
+  image: light
+  privileged: true
+  dockerfile: |
+    FROM debian
+    RUN apt-get update && apt-get install -y curl
+    ENV LIGHT_VERSION=1.2
+    # TODO Use the version below
+    RUN curl -fsSL https://github.com/haikarainen/light/releases/download/v1.2/light_1.2_amd64.deb > /tmp/light.deb \
+        && dpkg -i /tmp/light.deb \
+        && rm -rf /tmp/light.deb
+    ENTRYPOINT [ "/usr/bin/light" ]
+  x-startup:
+    keep_user: true
+
