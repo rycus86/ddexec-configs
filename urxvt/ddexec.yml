@@ -3,5 +3,5 @@ urxvt:
   image: urxvt
   dockerfile: |
     FROM alpine
-    RUN apk add --no-cache rxvt-unicode
+    RUN apk add --no-cache rxvt-unicode ttf-dejavu
     ENTRYPOINT [ "/usr/bin/urxvt" ]
