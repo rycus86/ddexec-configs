@@ -1,6 +1,7 @@
 #!/usr/local/bin/ddexec
 docker:
   image: docker
+  working_dir: ${PWD}
   command: >
     --help
   stdin_open: true
