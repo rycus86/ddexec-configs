@@ -1,0 +1,30 @@
+#!/usr/local/bin/ddexec
+i3lock:
+  image: i3lock-fancy
+  dockerfile: |
+    FROM alpine
+    RUN apk add \
+      scrot \
+      imagemagick \
+      bash \
+      make \
+      i3lock \
+      ttf-freefont
+    RUN mkdir /tmp/i3fancy \
+      && cd /tmp/i3fancy \
+      && wget -q -O i3repo.zip https://github.com/meskarune/i3lock-fancy/archive/master.zip \
+      && unzip i3repo.zip \
+      && cd i3lock-fancy-master \
+      && make install \
+      && cd / \
+      && rm -rf /tmp/i3fancy
+    # busybox mktemp does not support --suffix
+    RUN sed -i 's#image=$(mktemp --suffix=.png)#image="/tmp/screenshot.png"#' /usr/bin/i3lock-fancy
+    ENTRYPOINT [ "/usr/bin/i3lock-fancy", "-n" ]
+    CMD [ "--", "scrot", "-z" ]
+  x-startup:
+    share_x11: true
+    # password file should contain one password,
+    # either SHA-512 hashed (e.g. mkpasswd)
+    # or plaintext (this will be hashed in the container)
+    password_file: ${HOME}/.screenlock.pwd
