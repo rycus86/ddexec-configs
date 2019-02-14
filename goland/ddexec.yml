@@ -6,12 +6,7 @@ goland:
   environment:
     - GO111MODULE=${GO111MODULE:-auto}
   volumes:
-    - type: bind
-      source: ${HOME}/.GoLand
-      target: ${HOME}/.GoLand
-    - type: bind
-      source: ${HOME}/.GoLand.java
-      target: ${HOME}/.java
+    - ${HOME}/.GoLand.java:${HOME}/.java
 # To run the debugger, you'll need seccomp:unconfined, just uncomment below
 #  security_opt:
 #    - seccomp:unconfined

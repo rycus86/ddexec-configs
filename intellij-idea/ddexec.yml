@@ -5,15 +5,7 @@ idea:
   image: rycus86/intellij-${INTELLIJ_VARIANT:-idea}:${INTELLIJ_VERSION:-latest}
   network_mode: host
   volumes:
-    - type: bind
-      source: ${HOME}/.Idea
-      target: ${HOME}/.Idea
-    - type: bind
-      source: ${HOME}/.Idea.java
-      target: ${HOME}/.java
-    - type: bind
-      source: ${HOME}/.m2
-      target: ${HOME}/.m2
-    - type: bind
-      source: ${HOME}/.gradle
-      target: ${HOME}/.gradle
+    - ${HOME}/.Idea.java:${HOME}/.java
+    - ${HOME}/.Idea.m2:${HOME}/.m2
+    - ${HOME}/.Idea.gradle:${HOME}/.gradle
+
