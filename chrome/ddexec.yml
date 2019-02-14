@@ -5,12 +5,8 @@ chrome:
   # default: use 2x memory limit as swap
   memswap_limit: ${CHROME_MEMSWAP_LIMIT:-0}
   volumes:
-    - type: bind
-      source: ${HOME}/.chrome
-      target: /data
-    - type: bind
-      source: ${HOME}/Downloads
-      target: ${HOME}/Downloads
+    - ${HOME}/.chrome:/data
+    - ${HOME}/Downloads:${HOME}/Downloads
   security_opt:
     - seccomp=${SOURCE}/../chrome-seccomp.json
 

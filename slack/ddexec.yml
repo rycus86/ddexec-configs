@@ -3,9 +3,7 @@ slack:
   image: jess/slack
   ipc: host
   volumes:
-    - type: bind
-      source: ${HOME}/.slack
-      target: ${HOME}/.config/Slack
+    - ${HOME}/.slack:${HOME}/.config/Slack
   x-startup:
     share_sound: true
     share_video: true
