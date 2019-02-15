@@ -1,0 +1,5 @@
+#!/usr/local/bin/ddexec
+shfmt:
+  # use SHFMT_VERSION=v2.6.3 for a specific version
+  image: mvdan/shfmt:${SHFMT_VERSION:-latest}
+  working_dir: ${PWD}

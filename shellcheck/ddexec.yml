@@ -1,0 +1,6 @@
+#!/usr/local/bin/ddexec
+shellcheck:
+  # use SHFMT_VERSION=v0.6.0 for a specific version
+  image: koalaman/shellcheck:${SHELLCHECK_VERSION:-stable}
+  working_dir: ${PWD}
+  tty: true
