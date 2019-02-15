@@ -8,6 +8,6 @@ pycharm:
     - ${HOME}/.PyCharm.java:${HOME}/.java
     - ${HOME}/.PyCharm.py2/usr:/usr/local/lib/python2.7
     - ${HOME}/.PyCharm.py2/home:${HOME}/.local/lib/python2.7
-    - ${HOME}/.PyCharm.py3/usr:/usr/local/lib/python3.6
-    - ${HOME}/.PyCharm.py3/home:${HOME}/.local/lib/python3.6
+    - ${HOME}/.PyCharm.py3/usr:/usr/local/lib/python3.5
+    - ${HOME}/.PyCharm.py3/home:${HOME}/.local/lib/python3.5
 
