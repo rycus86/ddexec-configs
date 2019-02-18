@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+rofi:
+  image: rofi
+  dockerfile: |
+    FROM debian
+    RUN apt-get update && apt-get install -y rofi
+    ENTRYPOINT [ "/usr/bin/rofi" ]
+    CMD [ "-dmenu" ]
