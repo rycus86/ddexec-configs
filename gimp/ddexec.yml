@@ -1,0 +1,7 @@
+#!/usr/local/bin/ddexec
+gimp:
+  image: gimp
+  dockerfile: |
+    FROM debian
+    RUN apt-get update && apt-get install -y gimp
+    ENTRYPOINT [ "/usr/bin/gimp" ]
