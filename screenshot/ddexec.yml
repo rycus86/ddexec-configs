@@ -1,0 +1,11 @@
+#!/usr/local/bin/ddexec
+screenshot:
+  image: screenshot
+  volumes:
+    - ${HOME}/Pictures/Screenshots:/tmp/screenshots
+  dockerfile: |
+    FROM debian
+    RUN apt-get update && apt-get install -y xfce4-screenshooter
+    ENTRYPOINT [ "/usr/bin/xfce4-screenshooter", "-s", "/tmp/screenshots" ]
+    CMD [ "-r" ]
+
