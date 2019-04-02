@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+pngquant:
+  image: pngquant
+  working_dir: ${PWD}
+  dockerfile: |
+    FROM alpine
+    RUN apk add --no-cache pngquant
+    ENTRYPOINT [ "/usr/bin/pngquant" ]
