@@ -1,0 +1,8 @@
+#!/usr/local/bin/ddexec
+gparted:
+  image: jess/gparted
+  privileged: true
+  x-startup:
+    keep_user: true
+    share_x11: true
+
