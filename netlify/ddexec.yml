@@ -1,0 +1,12 @@
+#!/usr/local/bin/ddexec
+netlify:
+  image: netlify
+  working_dir: ${PWD}
+  stdin_open: true
+  tty: true
+  dockerfile: |
+    FROM node:alpine
+    RUN apk add ca-certificates
+    RUN npm install netlify-cli -g
+    ENTRYPOINT [ "/usr/local/bin/netlify" ]
+
