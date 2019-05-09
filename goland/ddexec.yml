@@ -7,6 +7,7 @@ goland:
     - GO111MODULE=${GO111MODULE:-auto}
   volumes:
     - ${HOME}/.GoLand.java:${HOME}/.java
+    - ${HOME}/.GoLand.share:${HOME}/.local/share/JetBrains
 # To run the debugger, you'll need seccomp:unconfined, just uncomment below
 #  security_opt:
 #    - seccomp:unconfined
