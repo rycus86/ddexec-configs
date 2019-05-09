@@ -8,4 +8,5 @@ idea:
     - ${HOME}/.Idea.java:${HOME}/.java
     - ${HOME}/.Idea.m2:${HOME}/.m2
     - ${HOME}/.Idea.gradle:${HOME}/.gradle
+    - ${HOME}/.Idea.share:${HOME}/.local/share/JetBrains
 
