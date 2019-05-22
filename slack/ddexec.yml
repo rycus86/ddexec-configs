@@ -7,7 +7,10 @@ slack:
   x-startup:
     share_sound: true
     share_video: true
-    share_home: true
-    share_dbus: true
-    share_x11: true
-    share_shm: true
+    share_home:  true
+    share_dbus:  true
+    share_x11:   true
+    share_shm:   true
+    xdg_open:
+      x-scheme-handler/slack: slack <arg>
+
