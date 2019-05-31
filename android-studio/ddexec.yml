@@ -1,0 +1,14 @@
+#!/usr/local/bin/ddexec
+studio:
+  # use ANDROID_STUDIO_VERSION=3.4.1 for a specific version
+  image: rycus86/androidstudio:${ANDROID_STUDIO_VERSION:-latest}
+  privileged: true
+  network_mode: host
+  devices:
+    - /dev/kvm
+  volumes:
+    - ${HOME}/.AndroidStudio:${HOME}/.AndroidStudio
+    - ${HOME}/.AndroidStudio.java:${HOME}/.java
+    - ${HOME}/.AndroidStudio.gradle:${HOME}/.gradle
+    - ${HOME}/.AndroidStudio.sdk:${HOME}/Android/Sdk
+
