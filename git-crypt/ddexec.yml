@@ -1,0 +1,14 @@
+#!/usr/local/bin/ddexec
+git-crypt:
+  image: git-crypt
+  working_dir: ${PWD}
+  stdin_open: true
+  tty: true
+  volumes:
+    - ${HOME}/.ssh:${HOME}/.ssh
+  dockerfile: |
+    FROM alpine
+    RUN echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
+    RUN apk add --no-cache git openssh-client git-crypt@testing
+    CMD git-crypt --help
+
