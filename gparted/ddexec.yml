@@ -3,6 +3,6 @@ gparted:
   image: jess/gparted
   privileged: true
   x-startup:
+    use_defaults: true
     keep_user: true
-    share_x11: true
 

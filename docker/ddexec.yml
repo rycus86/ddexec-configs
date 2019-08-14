@@ -6,3 +6,6 @@ docker:
     --help
   stdin_open: true
   tty: true
+  x-startup:
+    use_defaults:  true
+    fix_home_args: true
